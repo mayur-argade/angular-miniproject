@@ -1,0 +1,47 @@
+<div>
+    <app-navbar></app-navbar>
+
+    <div class="mx-auto w-11/12 ">
+
+        <section class="border border-2 rounded-lg">
+            <section
+                style="background-image: url('assets/profile.jpeg'); background-repeat: no-repeat; background-size: cover;"
+                class="relative rounded-lg header h-40">
+                <div
+                    class="flex justify-center bg-white items-center absolute left-3 -bottom-4 avatar border border-2 border-white rounded-full">
+                    <img class="h-32 w-32 rounded-full" src="https://picsum.photos/200" alt="">
+                    <button class="absolute right-0 top-0 bg-white rounded-lg h-7 w-7"><i
+                            class="ri-pencil-line"></i></button>
+                </div>
+            </section>
+
+            <div class="mx-4 my-8 flex justify-between items-center">
+                <div class="left flex flex-col justify-start text-left">
+                    <h1 class="text-xl font-medium">Mayur Argade</h1>
+                    <p class="space-x-4 text-gray-500">
+                        <span><i class="ri-mail-line mr-2"></i> argademayur2002gmail.com</span>
+                        <span><i class="ri-phone-line mr-2"></i> +91 9076102474</span>
+                    </p>
+                </div>
+                <div class="right">
+                    <button class="shadow-md rounded-md border-2 h-8 w-8 flex justify-center items-center"><i
+                            class="ri-more-fill"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <div class="flex items-center border border-1 h-14 rounded-md">
+                <a (click)="setActiveTab('account')" [ngClass]="{'bg-slate-100 text-black': activeTab == 'account'}" class="px-4 py-2 rounded-md cursor-pointer mx-2">Account settings</a>
+                <a (click)="setActiveTab('orders')"  [ngClass]="{'bg-slate-100 text-black': activeTab == 'orders'}" class="px-4 py-2 rounded-md cursor-pointer mx-2">Orders history</a>
+                <a (click)="setActiveTab('address')" [ngClass]="{'bg-slate-100 text-black': activeTab == 'address'}"  class="px-4 py-2 rounded-md cursor-pointer mx-2">Buy again</a>
+                <a (click)="setActiveTab('notification')" [ngClass]="{'bg-slate-100 text-black': activeTab == 'notification'}"  class="px-4 py-2 rounded-md cursor-pointer mx-2">Notifications</a>
+            </div>
+        </section>
+
+        <app-account-settings *ngIf="activeTab == 'account'" ></app-account-settings>
+        <app-order-details *ngIf="activeTab == 'orders'" ></app-order-details>
+        <app-address *ngIf="activeTab == 'address'"></app-address>
+        <app-notifications *ngIf="activeTab == 'notification'"></app-notifications>
+    </div>
+</div>

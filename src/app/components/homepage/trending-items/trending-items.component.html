@@ -1,0 +1,16 @@
+<section class="mt-20 w-full flex flex-col justify-center mx-auto">
+    <div class="text-center title text-6xl lobster-two-regular text-pink-600">Trending Cup Cakes</div>
+    <div class="mt-2 flex justify-center text-center">
+        <p class="w-9/12 poppins-light text-xl font-normal text-gray-500">
+            Small cakes baked in individual ramekins, hence the name cupcake
+        </p>
+    </div>
+    <div class="listings grid grid-cols-3 gap-8 mx-auto mt-5">
+        <div *ngFor="let item of items">
+            <app-card1 [item]="item" ></app-card1>
+        </div>
+    </div>
+    <div class="cta flex justify-center my-5">
+        <button class="bg-gradient-to-r from-pink-400 to-pink-800 text-white w-40 py-3">Order Now</button>
+    </div>
+</section>
