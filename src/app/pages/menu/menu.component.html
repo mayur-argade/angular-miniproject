@@ -8,7 +8,7 @@
 
     <div class="w-11/12 mx-auto grid grid-cols-4 mt-5 gap-3">
         <div class="col-span-1 flex flex-col justify-start items-start ">
-            
+
             <h3 class="mt-12 text-xl">Filter by Category</h3>
 
             <div class="filters ">
@@ -69,12 +69,10 @@
         <div class="col-span-3">
             <h2 class="text-4xl font-bold lobster-two-bold">Our Menu</h2>
             <div class="grid grid-cols-3 gap-3 mt-5">
-                <app-card1></app-card1>
-                <app-card1></app-card1>
-                <app-card1></app-card1>
-                <app-card1></app-card1>
-                <app-card1></app-card1>
-                <app-card1></app-card1>
+                <div *ngFor="let sweet of sweets" >
+                    <app-card1 [item]="sweet"></app-card1>
+                </div>
+
             </div>
         </div>
     </div>

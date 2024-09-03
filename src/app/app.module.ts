@@ -29,7 +29,8 @@ import { AuthService } from './services/auth.service';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { MenuComponent } from './pages/menu/menu.component';
-
+import {provideHttpClient } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,9 +62,10 @@ import { MenuComponent } from './pages/menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // HttpClientModule 
   ],
-  providers: [AuthService],
+  providers: [AuthService,  provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

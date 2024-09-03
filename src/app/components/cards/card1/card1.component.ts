@@ -6,8 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card1.component.css'
 })
 export class Card1Component {
-    @Input() item!: { image: string, ratings: number, title: string, price: number, property: string} 
+    @Input() item!: { image: string, ratings: number, name: string, price: number, property: string} 
     maxStars: number = 5;  // Total number of stars
+
+    constructor(){
+        if (this.item) {
+            console.log(this.item);
+        }
+    }
 
   getFullStars(): number[] {
     return Array(Math.floor(this.item.ratings)).fill(1);
